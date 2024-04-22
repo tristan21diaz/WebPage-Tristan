@@ -1,0 +1,113 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tristan's Home Page</title>
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+        }
+        /* Add more CSS styling here */
+    </style>
+</head>
+<body>
+    <h1>Tristan's Home Page</h1>
+    <img src="selfie.jpg" height="300" width="300" style="position: absolute; right: 100px; top: 50px;" alt="Tristan's Selfie">
+    <p>Name: Tristan Diaz</p>
+    <p>Address: 2532 East Seville Avenue Anaheim, CA</p>
+
+    <h2>Education</h2>
+    <p>Vanguard University</p>
+    <p>Physics Engineering</p>
+
+    <h2>Skills</h2>
+    <p>JavaScript</p>
+    <p>HTML/CSS</p>
+
+    <h2>Calculator</h2>
+    <form>
+	<p style="color:white">Calculator</p>
+            <table border ="1" >
+            <tr>
+                <td colspan="5"><input type="text" id="display" size="50" value=""></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                <input type="button" value="clear" onclick="clearDisplay()" style="height:100%;width:100%;"></td>
+                <td colspan="3">
+                <input type="button" value="=" onclick="sum()" style="height:500%;width:100%;"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="add('1')" style="height:100%;width:100%;"></td>
+                <td><input type="button" value="2" onclick="add('2')" style="height:100%;width:100%;"></td> 
+                <td><input type="button" value="3" onclick="add('3')" style="height:100%;width:100%;"></td>
+                <td><input type="button" value="+" onclick="add('+')" style="height:100%;width:100%;"></td>
+                <td><input type="button" value="tan" onclick="tan(this.form.display)" style="height:100%;width:100%;"></td>
+            </tr>
+            <tr>
+                 <td><input type="button" value="4" onclick="add('4')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="5" onclick="add('5')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="6" onclick="add('6')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="-" onclick="add('-')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="sin" onclick="sin(this.form.display)" style="height:100%;width:100%;"></td>
+            </tr>
+            <tr>
+                 <td><input type="button" value="7" onclick="add('7')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="8" onclick="add('8')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="9" onclick="add('9')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="*" onclick="add('*')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="cos" onclick="cos(this.form.display)" style="height:100%;width:100%;"></td>
+            </tr>
+            <tr>
+                 <td><input type="button" value="0" onclick="add('0')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="sqrt" onclick="abs(this.form.display)" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="." onclick="add('.')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="/" onclick="add('/')" style="height:100%;width:100%;"></td>
+                 <td><input type="button" value="x^2" onclick="pow(this.form.display)" style="height:100%;width:100%;"></td>
+            <tr>
+            </table>
+        </form><br>
+        
+        <script>
+            var all = "";//global variable
+                 function add(num) {
+                   all = all + num;
+                   document.getElementById("display").value = all;
+                 }
+                 function sum() {
+                   document.getElementById("display").value = eval(all);
+                 }
+                 function clearDisplay() {
+                   all = "";
+                   document.getElementById("display").value = "0";
+                 }
+                 function tan(all) {
+                   all.value = Math.tan((all.value * 3.141592) / 180);
+                 }
+                 function sin(all) {
+                   all.value = Math.sin((all.value * 3.141592) / 180);
+                 }
+                 function cos(all) {
+                   all.value = Math.cos((all.value * 3.141592) / 180);
+                 }
+                 function abs(all) {
+                   all.value = Math.sqrt(all.value);
+                 }
+                 function pow(all){
+                   all.value = Math.pow(all.value,2);
+                 }
+        </script>
+</body>
+
+
+    <h2>Jukebox</h2>
+    <audio controls>
+        <source src="Jon Watts - Expectations.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="calculator.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
